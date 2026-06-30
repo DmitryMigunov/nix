@@ -52,8 +52,9 @@ in {
 
   services.mako = {
     enable = true;
-
-    defaultTimeout = 5000;
+    settings = {
+      default-timeout = 5000;
+    };
   };
 
   programs.zed-editor = {
@@ -98,16 +99,10 @@ in {
       }
     ];
 
-    events = [
-      {
-        event = "before-sleep";
-        command = lock;
-      }
-      {
-        event = "after-resume";
-        command = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
-      }
-    ];
+    events = {
+      "before-sleep" = lock;
+      "after-resume" = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
+    };
   };
 
   gtk = {
@@ -122,14 +117,6 @@ in {
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
-  };
-
-  xdg.portal = {
-    enable = true;
-
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
   };
 
   dconf.settings = {
