@@ -18,16 +18,22 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    nixosConfigurations.dm = nixpkgs.lib.nixosSystem {
-      system = system;
-      specialArgs = {inherit inputs;};
+
+    mkHost = name: nixpkgs.lib.nixosSystem {
+      inherit system;
+
+      specialArgs = {
+        inherit inputs;
+        hostName = name;
+      };
+
       modules = [
-        ({...}: {
+        ({ ... }: {
           nixpkgs.config.allowUnfree = true;
         })
 
         ./configuration.nix
+        ./host.nix
 
         home-manager.nixosModules.home-manager
         {
@@ -35,12 +41,19 @@
           home-manager.useUserPackages = true;
 
           home-manager.users.dmitry = import ./home.nix;
+
           home-manager.extraSpecialArgs = {
-            inherit inputs;
-            system = system;
+            inherit inputs system;
+            hostName = name;
           };
         }
       ];
+    };
+
+  in {
+    nixosConfigurations = {
+      dm = mkHost "dm";
+      citadele = mkHost "citadele";
     };
 
     formatter.${system} = pkgs.alejandra;

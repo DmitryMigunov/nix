@@ -23,8 +23,6 @@
     options = "--delete-older-than 10d";
   };
 
-  networking.hostName = "dm";
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Riga";
