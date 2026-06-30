@@ -1,0 +1,9 @@
+result
+result-*
+
+*~
+*.swp
+*.swo
+*.bak
+.DS_Store
+
