@@ -62,12 +62,6 @@
     recursive = true;
   };
 
-  home.shellAliases = {
-    copy = "wl-copy";
-    paste = "wl-paste";
-    zed = "zeditor";
-  };
-
   gtk = {
     enable = true;
 

@@ -14,6 +14,9 @@
       k = "kubectl";
       kgp = "kubectl get pods";
       kgs = "kubectl get svc";
+      copy = "wl-copy";
+      paste = "wl-paste";
+      zed = "zeditor";
     };
 
     initContent = ''
