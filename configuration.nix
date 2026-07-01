@@ -31,7 +31,7 @@
 
   users.users.dmitry = {
     isNormalUser = true;
-    extraGroups = ["wheel" "disk"];
+    extraGroups = ["wheel" "disk" "docker"];
     shell = pkgs.zsh;
   };
 
@@ -41,7 +41,12 @@
     git
     gparted-full
     wl-clipboard
+    docker
   ];
+
+  virtualisation.docker = {
+    enable = true;
+  };
 
   programs.neovim = {
     enable = true;
