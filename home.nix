@@ -35,6 +35,7 @@
     wlr-randr
     google-chrome
     tree
+    bat
 
     enpass
     slack
