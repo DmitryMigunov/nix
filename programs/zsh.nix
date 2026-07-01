@@ -6,7 +6,11 @@
         "git"
         "kube-ps1"
       ];
-      theme = "cloud";
+      theme = "essembeh";
     };
+
+    initContent = ''
+      PROMPT='$(kube_ps1)'$PROMPT
+    '';
   };
 }

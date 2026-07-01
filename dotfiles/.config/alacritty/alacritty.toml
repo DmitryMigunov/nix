@@ -26,3 +26,7 @@ style = "Regular"
 [font.offset]
 x = 2
 y = 4
+
+[window.padding]
+x = 10
+y = 10
