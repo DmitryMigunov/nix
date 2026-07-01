@@ -27,6 +27,7 @@
     pkgs.nixfmt
 
     fzf
+    eza
     htop
     alacritty
     ripgrep

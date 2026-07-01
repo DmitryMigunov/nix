@@ -4,6 +4,7 @@
       enable = true;
       plugins = [
         "git"
+        "eza"
         "kube-ps1"
       ];
       theme = "essembeh";
