@@ -20,7 +20,7 @@
     };
 
     initContent = ''
-      PROMPT='$(kube_ps1)'$PROMPT
+      PROMPT='$(kube_ps1) '$PROMPT
     '';
   };
 }
