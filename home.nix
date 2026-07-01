@@ -37,6 +37,8 @@
     google-chrome
     tree
     bat
+    jq
+    httpie
 
     enpass
     slack
