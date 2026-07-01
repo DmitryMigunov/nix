@@ -4,6 +4,7 @@
       enable = true;
       plugins = [
         "git"
+        "kube-ps1"
       ];
       theme = "cloud";
     };
