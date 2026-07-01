@@ -63,8 +63,9 @@
   };
 
   home.shellAliases = {
-    c = "wl-copy";
-    p = "wl-paste";
+    copy = "wl-copy";
+    paste = "wl-paste";
+    zed = "zeditor";
   };
 
   gtk = {
