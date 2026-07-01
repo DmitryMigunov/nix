@@ -1,7 +1,7 @@
 lock "swaylock"
 unlock "pkill -9 swaylock"
-idlehint 580
-timeout 600 "swaylock"
-timeout 960 "swaymsg 'output * dpms off'" resume "swaymsg 'output * dpms on'"
+idlehint 100
+timeout 120 "swaylock"
+timeout 200 "swaymsg 'output * dpms off'" resume "swaymsg 'output * dpms on'"
 before-sleep "swaylock"
 after-resume "swaymsg 'output * dpms on'"
