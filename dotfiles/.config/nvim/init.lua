@@ -216,9 +216,10 @@ vim.keymap.set("n", "<leader>fh", telescope.help_tags, {})
 -- lsp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
-lspconfig.zls.setup({
+vim.lsp.config("*", {
   capabilities = capabilities,
 })
+
 
 vim.diagnostic.config({
   signs = false,
