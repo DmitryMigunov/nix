@@ -1,7 +1,7 @@
 {...}: {
   programs.zed-editor = {
     enable = true;
-    extensions = ["nix" "toml" "rust"];
+    extensions = ["nix" "toml" "rust" "lua"];
     userSettings = {
       theme = {
         mode = "system";
