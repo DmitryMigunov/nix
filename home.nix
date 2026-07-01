@@ -8,6 +8,7 @@
   imports =
     [
       ./programs/zed-editor.nix
+      ./programs/zsh.nix
 
       ./services/mako.nix
     ]

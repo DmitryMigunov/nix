@@ -27,9 +27,12 @@
 
   time.timeZone = "Europe/Riga";
 
+  programs.zsh.enable = true;
+
   users.users.dmitry = {
     isNormalUser = true;
     extraGroups = ["wheel" "disk"];
+    shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
