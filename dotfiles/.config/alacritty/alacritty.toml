@@ -1,3 +1,4 @@
+[general]
 import = ["./noctis-obscuro.toml"]
 
 [env]
