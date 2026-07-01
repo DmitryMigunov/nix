@@ -64,7 +64,17 @@
     };
   };
 
-  services.displayManager.ly.enable = true;
+  services.greetd = {
+    enable = true;
+
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --cmd sway --time --remember";
+        user = "greeter";
+      };
+    };
+  };
+
   services.gnome.gnome-keyring.enable = true;
 
   services.udisks2.enable = true;
