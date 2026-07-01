@@ -19,8 +19,7 @@ set $term alacritty
 set $menu wmenu-run
 
 # Wallpaper
-exec awww-daemon
-exec swww img "$(find /etc/nixos/wallpapers -type f | shuf -n 1)"
+exec wbg "$(find /etc/nixos/wallpapers -type f | shuf -n 1)"
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)

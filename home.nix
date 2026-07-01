@@ -50,8 +50,8 @@
     wl-clipboard
 
     jetbrains-toolbox
-    awww
 
+    wbg
     swaylock-effects
     swayidle
   ];
