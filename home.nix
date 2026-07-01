@@ -51,7 +51,7 @@
     swappy
     wl-clipboard
 
-    jetbrains-toolbox
+    jetbrains.idea
     google-cloud-sdk
 
     wbg
