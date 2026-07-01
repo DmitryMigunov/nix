@@ -50,6 +50,7 @@
     wl-clipboard
 
     jetbrains-toolbox
+    google-cloud-sdk
 
     wbg
     swaylock-effects
