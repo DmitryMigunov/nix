@@ -9,6 +9,12 @@
       theme = "essembeh";
     };
 
+    shellAliases = {
+      k = "kubectl";
+      kgp = "kubectl get pods";
+      kgs = "kubectl get svc";
+    };
+
     initContent = ''
       PROMPT='$(kube_ps1)'$PROMPT
     '';
