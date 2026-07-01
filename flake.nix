@@ -19,37 +19,37 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
 
-    mkHost = name: nixpkgs.lib.nixosSystem {
-      inherit system;
+    mkHost = name:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
 
-      specialArgs = {
-        inherit inputs;
-        hostName = name;
+        specialArgs = {
+          inherit inputs;
+          hostName = name;
+        };
+
+        modules = [
+          ({...}: {
+            nixpkgs.config.allowUnfree = true;
+          })
+
+          ./configuration.nix
+          ./host.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.dmitry = import ./home.nix;
+
+            home-manager.extraSpecialArgs = {
+              inherit inputs system;
+              hostName = name;
+            };
+          }
+        ];
       };
-
-      modules = [
-        ({ ... }: {
-          nixpkgs.config.allowUnfree = true;
-        })
-
-        ./configuration.nix
-        ./host.nix
-
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-
-          home-manager.users.dmitry = import ./home.nix;
-
-          home-manager.extraSpecialArgs = {
-            inherit inputs system;
-            hostName = name;
-          };
-        }
-      ];
-    };
-
   in {
     nixosConfigurations = {
       dm = mkHost "dm";

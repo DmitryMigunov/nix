@@ -4,19 +4,16 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   imports =
-      [
-        ./programs/swaylock.nix
-        ./programs/zed-editor.nix
+    [
+      ./programs/zed-editor.nix
 
-        ./services/mako.nix
-        ./services/swayidle.nix
-      ]
-      ++ lib.optionals (hostName == "dm") [
-        ./services/kanshi.nix
-      ];
+      ./services/mako.nix
+    ]
+    ++ lib.optionals (hostName == "dm") [
+      ./services/kanshi.nix
+    ];
 
   home.username = "dmitry";
 
@@ -36,6 +33,7 @@
     wdisplays
     wlr-randr
     google-chrome
+    tree
 
     enpass
     slack
@@ -50,9 +48,15 @@
 
     jetbrains-toolbox
     awww
+
+    swaylock-effects
+    swayidle
   ];
 
-  home.file.".config/sway/config".source = ./configs/sway/config;
+  home.file.".config" = {
+    source = ./dotfiles/.config;
+    recursive = true;
+  };
 
   home.shellAliases = {
     c = "wl-copy";
