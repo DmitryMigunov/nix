@@ -10,6 +10,8 @@
       ./programs/zed-editor.nix
       ./programs/zsh.nix
       ./programs/nh.nix
+      ./programs/autojump.nix
+      ./programs/direnv.nix
 
       ./services/mako.nix
     ]
@@ -25,41 +27,60 @@
   programs.firefox.enable = true;
 
   home.packages = with pkgs; [
-    pkgs.nixfmt
-
-    bc
-    fzf
-    eza
-    htop
-    alacritty
-    ripgrep
-    thunar
-    wdisplays
-    wlr-randr
-    google-chrome
-    tree
+    # CLI utilities
     bat
-    jq
+    bc
+    eza
+    fd
+    fzf
+    htop
     httpie
+    jq
+    ripgrep
+    tree
 
-    enpass
-    slack
-    kubectl
-    kubectx
-    kubernetes-helm
-    kubectl-view-secret
+    # Terminal
+    alacritty
 
+    # File manager
+    thunar
+
+    # Wayland / Sway
     grim
     slurp
     swappy
+    swayidle
+    swaylock-effects
+    wbg
+    wdisplays
     wl-clipboard
+    wlr-randr
 
-    jetbrains.idea
+    # Browser
+    google-chrome
+
+    # Development
+    go
+    python3
+    nixfmt
+
+    # Kubernetes
+    kubectl
+    kubectl-view-secret
+    kubectx
+    kubernetes-helm
+
+    # Cloud
     google-cloud-sdk
 
-    wbg
-    swaylock-effects
-    swayidle
+    # IDE
+    jetbrains.idea
+
+    # Communication
+    slack
+
+    # Password manager
+    enpass
   ];
 
   home.file.".config" = {
