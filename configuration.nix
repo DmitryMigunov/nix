@@ -78,7 +78,7 @@
     settings = {
       default_session = {
         command = "${pkgs.tuigreet}/bin/tuigreet --cmd sway --time --remember";
-        user = "greeter";
+        user = "dmitry";
       };
     };
   };
