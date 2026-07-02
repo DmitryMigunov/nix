@@ -38,6 +38,7 @@
     jq
     ripgrep
     tree
+    wrangler
 
     # Terminal
     alacritty
@@ -60,6 +61,7 @@
     google-chrome
 
     # Development
+    bun
     go
     nixfmt
     python3
