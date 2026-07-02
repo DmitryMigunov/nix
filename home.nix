@@ -9,6 +9,7 @@
     [
       ./programs/zed-editor.nix
       ./programs/zsh.nix
+      ./programs/nh.nix
 
       ./services/mako.nix
     ]
@@ -26,6 +27,7 @@
   home.packages = with pkgs; [
     pkgs.nixfmt
 
+    bc
     fzf
     eza
     htop
@@ -45,6 +47,7 @@
     kubectl
     kubectx
     kubernetes-helm
+    kubectl-view-secret
 
     grim
     slurp
