@@ -61,8 +61,9 @@
 
     # Development
     go
-    python3
     nixfmt
+    python3
+    uv
 
     # Kubernetes
     kubectl
