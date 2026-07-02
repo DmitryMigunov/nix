@@ -1,35 +1,89 @@
-cache = {}
+local cache = {}
 
-function cached(ttl, key, fn)
-  local now = os.time()
+local function cached(ttl, key, fn)
+    local now = os.time()
 
-  if cache[key] and cache[key].t + ttl > now then
-    return cache[key].v
-  end
+    if cache[key] and cache[key].t + ttl > now then
+        return table.unpack(cache[key].v)
+    end
 
-  local v = fn()
-  cache[key] = { t = now, v = v }
-  return v
+    local v = { fn() }
+
+    cache[key] = {
+        t = now,
+        v = v
+    }
+
+    return table.unpack(v)
 end
 
-function kube()
-  local handle = io.popen("kubectl config current-context 2>/dev/null")
-  local ctx = handle:read("*a"):gsub("\n","")
-  handle:close()
+local function sleep(s)
+    local timer = io.popen("sleep " .. s)
+    if not timer then
+        return
+    end
+    timer:close()
+end
 
-  local ns = io.popen(
-    "kubectl config view --minify -o jsonpath='{..namespace}' 2>/dev/null"
-  ):read("*a"):gsub("\n","")
+-- Animation
+local animation_frames = {
+    "   ",
+    "░░░",
+    "▒▒▒",
+    "▓▓▓",
+}
 
-  if ctx == "" then return "" end
-  return "☸ " .. ctx .. "/" .. (ns ~= "" and ns or "default")
+local animation_ticker = 1
+local animation_dir = 1 -- 1 = forward, -1 = backward
+
+local function frame()
+    local f = animation_frames[animation_ticker]
+
+    animation_ticker = animation_ticker + animation_dir
+
+    if animation_ticker > #animation_frames then
+        animation_ticker = #animation_frames - 1
+        animation_dir = -1
+    elseif animation_ticker < 1 then
+        animation_ticker = 2
+        animation_dir = 1
+    end
+
+    return f
+end
+
+local function kube()
+    local handle = io.popen("kubectl config current-context 2>/dev/null")
+    if not handle then
+        return "", ""
+    end
+
+    local ctx = handle:read("*a"):gsub("\n", "")
+    handle:close()
+
+    local ns = io.popen(
+        "kubectl config view --minify -o jsonpath='{..namespace}' 2>/dev/null"
+    ):read("*a"):gsub("\n", "")
+
+    return ctx, (ns ~= "" and ns or "default")
 end
 
 while true do
-  local k = cached(5, "kube", kube)
-  local time = os.date("%H:%M:%S")
+    local parts = {}
+    -- kubernetes
+    local kube_ctx, kube_ns = cached(5, "kube", kube)
 
-  print(k .. " | " .. time)
-  io.flush()
-  os.execute("sleep 1")
+    if kube_ctx:find("prod") then
+        local current_frame = frame()
+        table.insert(parts, current_frame .. " " .. kube_ctx .. "/" .. kube_ns .. " " .. current_frame)
+    else
+        table.insert(parts, "☸ " .. kube_ctx .. "/" .. kube_ns)
+    end
+
+    -- clock
+    table.insert(parts, os.date("%H:%M:%S"))
+
+    print(table.concat(parts, " | "))
+    io.flush()
+    sleep(1)
 end
