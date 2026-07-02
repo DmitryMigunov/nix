@@ -66,6 +66,7 @@
     nixfmt
     python3
     uv
+    lua
 
     # Kubernetes
     kubectl
