@@ -97,7 +97,7 @@ while true do
     table.insert(parts, ip)
 
     -- clock
-    table.insert(parts, os.date("%H:%M:%S"))
+    table.insert(parts, os.date("%a %d %b %H:%M:%S %Z"))
 
     print(table.concat(parts, " | "))
     io.flush()
