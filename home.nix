@@ -12,6 +12,7 @@
       ./programs/nh.nix
       ./programs/autojump.nix
       ./programs/direnv.nix
+      ./programs/fzf.nix
 
       ./services/mako.nix
     ]
@@ -32,7 +33,6 @@
     bc
     eza
     fd
-    fzf
     htop
     httpie
     jq
