@@ -68,6 +68,18 @@ local function kube()
     return ctx, (ns ~= "" and ns or "default")
 end
 
+local function get_ip()
+    local handle = io.popen("ip route get 1.1.1.1 2>/dev/null")
+    if not handle then
+        return nil
+    end
+
+    local out = handle:read("*a") or ""
+    handle:close()
+
+    return out:match("src%s+([%d%.]+)")
+end
+
 while true do
     local parts = {}
     -- kubernetes
@@ -79,6 +91,10 @@ while true do
     else
         table.insert(parts, "☸ " .. kube_ctx .. "/" .. kube_ns)
     end
+
+    -- network
+    local ip = cached(5, "ip", get_ip)
+    table.insert(parts, ip)
 
     -- clock
     table.insert(parts, os.date("%H:%M:%S"))
