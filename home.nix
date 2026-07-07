@@ -88,6 +88,10 @@
     enpass
   ];
 
+  home.sessionVariables = {
+    TFENV_CONFIG_DIR = "$HOME/.tfenv";
+  };
+
   home.file.".config" = {
     source = ./dotfiles/.config;
     recursive = true;
