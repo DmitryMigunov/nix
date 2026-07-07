@@ -13,8 +13,6 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term alacritty
 # Your preferred application launcher
 set $menu wmenu-run
 
@@ -62,7 +60,7 @@ exec_always swayidle
 # Basics:
 #
     # Start a terminal
-    bindsym --to-code $mod+Return exec $term
+    bindsym --to-code $mod+Return exec alacritty --working-directory "$(swaycwd 2>/dev/null || echo $HOME)"
 
     # Kill focused window
     bindsym --to-code $mod+Shift+q kill

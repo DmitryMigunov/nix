@@ -1,0 +1,16 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+while (<STDIN>) {
+    s/\e\[[0-9;]*m//g; # Remove ANSI colors
+
+    if (/^\s*#\s+(.+?)\s+will be\b/) {
+        my $target = $1;
+
+        $target =~ s/\[([^\d"][^\]]*)\]/["$1"]/g;
+
+        print "'$target'\n";
+    }
+}

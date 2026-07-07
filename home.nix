@@ -33,6 +33,7 @@
     bc
     eza
     fd
+    gcc
     htop
     httpie
     jq
@@ -51,6 +52,7 @@
     grim
     slurp
     swappy
+    swaycwd
     swayidle
     swaylock-effects
     wbg
@@ -68,6 +70,7 @@
     python3
     uv
     lua
+    perl
 
     # Kubernetes
     kubectl
@@ -94,6 +97,11 @@
 
   home.file.".config" = {
     source = ./dotfiles/.config;
+    recursive = true;
+  };
+
+  home.file."bin" = {
+    source = ./dotfiles/bin;
     recursive = true;
   };
 

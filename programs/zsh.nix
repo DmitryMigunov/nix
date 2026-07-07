@@ -23,6 +23,16 @@
 
     initContent = ''
       PROMPT='$(kube_ps1) '$PROMPT
+      PATH="$PATH:$HOME/go/bin:$HOME/bin"
+
+      tfa-targets() {
+        local filter="$1"
+
+        tf-targets \
+          | rg "$filter" \
+          | sed 's/^/-target=/' \
+          | xargs -r terraform apply -auto-approve
+      }
     '';
   };
 }
