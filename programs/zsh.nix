@@ -3,9 +3,10 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "git"
         "eza"
+        "git"
         "kube-ps1"
+        "terraform"
       ];
       theme = "essembeh";
     };
