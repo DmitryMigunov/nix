@@ -37,6 +37,7 @@
     httpie
     jq
     ripgrep
+    tfenv
     tree
     wrangler
 
