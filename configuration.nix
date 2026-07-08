@@ -90,7 +90,6 @@
   services.envfs.enable = true;
   services.tumbler.enable = true;
 
-
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;

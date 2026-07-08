@@ -68,6 +68,7 @@ in {
     google-chrome
 
     # Development
+    gnumake
     bun
     go
     nixfmt
@@ -75,6 +76,7 @@ in {
     uv
     lua
     perl
+    perl5Packages.Carton
 
     # Kubernetes
     kubectl
