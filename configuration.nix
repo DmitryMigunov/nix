@@ -88,6 +88,8 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
   services.envfs.enable = true;
+  services.tumbler.enable = true;
+
 
   programs.sway = {
     enable = true;
