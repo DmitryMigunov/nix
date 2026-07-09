@@ -60,6 +60,7 @@ in {
     swaycwd
     swayidle
     swaylock-effects
+    tofi
     wbg
     wdisplays
     wl-clipboard

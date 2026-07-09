@@ -14,7 +14,8 @@ set $down j
 set $up k
 set $right l
 # Your preferred application launcher
-set $menu wmenu-run
+# set $menu wmenu-run # standard one
+set $menu tofi-run --output `swaymsg -t get_outputs| jq -r '.[] | select(.focused ).name'` | xargs swaymsg exec --
 
 # Wallpaper
 exec wbg "$(find /etc/nixos/wallpapers -type f | shuf -n 1)"
