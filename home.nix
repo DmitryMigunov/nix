@@ -38,6 +38,7 @@ in {
     eza
     fd
     gcc
+    handlr-regex
     htop
     httpie
     jq

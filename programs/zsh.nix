@@ -17,6 +17,7 @@
       k = "kubectl";
       kgp = "kubectl get pods";
       kgs = "kubectl get svc";
+      open = "handlr open";
       paste = "wl-paste";
       zed = "zeditor";
     };
