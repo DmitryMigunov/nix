@@ -26,6 +26,12 @@ or
 sudo nixos-rebuild switch --flake .#citadele
 ```
 
+## Upgrade
+
+```bash
+nix flake update
+```
+
 ## Fresh Installation
 
 The following steps prepare a new machine with:
