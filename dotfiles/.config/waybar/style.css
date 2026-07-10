@@ -72,7 +72,6 @@
 #workspaces button {
     color: @workspace-fg;
     font-size: 14px;
-    border-radius: 100%;
     padding: 0 2px;
     margin: 0 3px;
 }
@@ -120,7 +119,7 @@
 
 /* ---<==== Misc ====>--- */
 tooltip {
-    border-radius: 15px;
+    border-radius: 3px;
     background: @tooltip-bg;
 }
 
@@ -133,11 +132,11 @@ tooltip label {
 .popup * {
     box-shadow: none;
     outline: none;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 menu {
-    border-radius: 10px;
+    border-radius: 3px;
     font-weight: 700;
     color: @fg;
     background: @tooltip-bg;
@@ -148,7 +147,7 @@ menu > * {
 }
 
 menu > *:hover {
-    border-radius: 10px;
+    border-radius: 3px;
     background-color: @highlight;
 }
 
@@ -162,12 +161,12 @@ slider {
 trough {
     min-width: 50px;
     min-height: 5px;
-    border-radius: 8px;
+    border-radius: 3px;
     background: @inactive;
 }
 
 trough highlight {
-    border-radius: 8px;
+    border-radius: 3px;
     background-color: @fg;
     background-image: none;
 }
