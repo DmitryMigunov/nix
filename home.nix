@@ -70,15 +70,16 @@ in {
     google-chrome
 
     # Development
-    gnumake
     bun
+    gnumake
     go
-    nixfmt
-    python3
-    uv
     lua
+    nixfmt
+    nodejs
     perl
     perl5Packages.Carton
+    python3
+    uv
 
     # Kubernetes
     kubectl
