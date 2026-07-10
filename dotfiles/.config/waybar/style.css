@@ -1,0 +1,173 @@
+@define-color module-bg     rgb(8, 8, 11);
+@define-color tooltip-bg    @module-bg;
+@define-color inactive      #787c99;
+@define-color fg            #acb0d0;
+@define-color workspace-fg  @fg;
+@define-color highlight     @inactive;
+
+@define-color red           #f7768e;
+@define-color blue          #7aa2f7;
+@define-color yellow        #e0af68;
+@define-color green         #41a6b5;
+
+* {
+    font-family: "JetBrainsMono NFM";
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+}
+
+#waybar {
+    font-weight: 700;
+    background: @module-bg;
+    font-size: 14px;
+    color: @fg;
+}
+
+#network,
+#tray {
+    padding: 1px 6px;
+}
+
+#workspaces,
+#memory,
+#cpu,
+#window,
+#load {
+    margin: 0 3px;
+}
+
+#right,
+#left,
+#right-hidden-top,
+#left-hidden-top {
+    padding: 2px 2px;
+    background: @module-bg;
+}
+
+#clock {
+    background: @module-bg;
+    padding: 1px 18px;
+    border-radius: 3px;
+}
+
+#cpu.critical,
+#memory.critical,
+#network.disabled,
+#temperature.critical,
+#network.disconnected {
+    color: @red;
+}
+
+#cpu.warning,
+#memory.warning,
+#temperature.warning {
+    color: @yellow;
+    background: unset;
+}
+
+#workspaces button {
+    color: @workspace-fg;
+    font-size: 14px;
+    border-radius: 100%;
+    padding: 0 2px;
+    margin: 0 3px;
+}
+
+#workspaces button:hover {
+    background: transparent;
+}
+
+#custom-kube {
+    padding: 1px 14px;
+    margin: 0 4px;
+}
+
+#custom-kube.test {
+}
+
+#custom-kube.sandbox {
+    color: #fab387;
+    font-weight: bold;
+}
+
+#custom-kube.prod {
+    background-color: #f38ba8;
+    color: black;
+    font-weight: bold;
+    animation-name: blink-red;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink-red {
+    0% {
+        background-color: rgba(243, 139, 168, 0);
+        color: #f38ba8;
+    }
+    50% {
+        background-color: rgba(243, 139, 168, 0.6);
+        color: #ffffff;
+    }
+    100% {
+        background-color: rgba(243, 139, 168, 0);
+        color: #f38ba8;
+    }
+}
+
+/* ---<==== Misc ====>--- */
+tooltip {
+    border-radius: 15px;
+    background: @tooltip-bg;
+}
+
+tooltip label {
+    padding: 3px 10px;
+    color: @fg;
+    font-weight: 700;
+}
+
+.popup * {
+    box-shadow: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+menu {
+    border-radius: 10px;
+    font-weight: 700;
+    color: @fg;
+    background: @tooltip-bg;
+}
+
+menu > * {
+    padding: 3px 0px;
+}
+
+menu > *:hover {
+    border-radius: 10px;
+    background-color: @highlight;
+}
+
+/* Sliders */
+
+slider {
+    opacity: 0;
+    box-shadow: none;
+}
+
+trough {
+    min-width: 50px;
+    min-height: 5px;
+    border-radius: 8px;
+    background: @inactive;
+}
+
+trough highlight {
+    border-radius: 8px;
+    background-color: @fg;
+    background-image: none;
+}

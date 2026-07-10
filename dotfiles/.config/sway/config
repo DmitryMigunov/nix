@@ -17,6 +17,9 @@ set $right l
 # set $menu wmenu-run # standard one
 set $menu tofi-run --output `swaymsg -t get_outputs| jq -r '.[] | select(.focused ).name'` | xargs swaymsg exec --
 
+# Bar
+exec waybar
+
 # Wallpaper
 exec wbg "$(find /etc/nixos/wallpapers -type f | shuf -n 1)"
 ### Output configuration
@@ -222,19 +225,19 @@ bindsym --to-code $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command lua $HOME/.config/sway/bar.lua
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+#bar {
+#    position top
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    status_command lua $HOME/.config/sway/bar.lua
+#
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
+#}
 
 input type:keyboard {
     xkb_layout lv,ru

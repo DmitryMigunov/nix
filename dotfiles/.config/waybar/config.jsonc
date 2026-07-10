@@ -1,0 +1,49 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 26,
+
+  "group/left": {
+    "orientation": "horizontal",
+    "modules": ["sway/workspaces"],
+  },
+
+  "group/right": {
+    "orientation": "horizontal",
+    "modules": ["custom/kube", "network", "clock", "tray"],
+  },
+
+  "modules-left": ["group/left"],
+  "modules-center": [],
+  "modules-right": ["group/right"],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "{name}",
+  },
+
+  "network": {
+    "format-wifi": "  {ipaddr}",
+    "format-ethernet": "󰈀 {ipaddr}",
+    "format-disconnected": "󰲜 No IP",
+    "tooltip-format": "{ifname} via {gwaddr}",
+  },
+
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M:%S %Z}",
+    "interval": 1,
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10,
+  },
+
+  "custom/kube": {
+    "exec": "lua ~/.config/waybar/kube-context.lua",
+    "return-type": "json",
+    "interval": 3,
+  },
+}

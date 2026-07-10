@@ -73,7 +73,7 @@ in {
     bun
     gnumake
     go
-    lua
+    (lua.withPackages (ps: [ps.cjson]))
     nixfmt
     nodejs
     perl
@@ -114,6 +114,8 @@ in {
     source = ./dotfiles/bin;
     recursive = true;
   };
+
+  programs.waybar.enable = true;
 
   gtk = {
     enable = true;
