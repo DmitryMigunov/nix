@@ -94,6 +94,7 @@ in {
 
     # Communication
     slack
+    telegram-desktop
 
     # Password manager
     enpass
