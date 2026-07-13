@@ -35,6 +35,7 @@ in {
     # CLI utilities
     bat
     bc
+    croc
     eza
     fd
     gcc
