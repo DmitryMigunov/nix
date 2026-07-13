@@ -44,9 +44,12 @@ in {
     httpie
     jq
     ripgrep
+    stern
     tfenv
+    tomlq
     tree
     wrangler
+    yq
 
     # Terminal
     alacritty
