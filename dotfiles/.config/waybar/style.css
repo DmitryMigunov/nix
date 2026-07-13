@@ -70,14 +70,25 @@
 }
 
 #workspaces button {
-    color: @workspace-fg;
-    font-size: 14px;
-    padding: 0 2px;
-    margin: 0 3px;
+    color: #a6adc8;
+    background: transparent;
 }
 
 #workspaces button:hover {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.08);
+    color: #cdd6f4;
+}
+
+#workspaces button.focused,
+#workspaces button.visible {
+    background: #313244;
+}
+
+#workspaces button.urgent {
+    background-color: #f38ba8;
+    color: #11111b;
+    font-weight: bold;
+    animation: blink 1.5s infinite alternate;
 }
 
 #custom-kube {

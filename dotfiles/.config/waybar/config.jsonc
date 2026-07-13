@@ -5,7 +5,7 @@
 
   "group/left": {
     "orientation": "horizontal",
-    "modules": ["sway/workspaces"],
+    "modules": ["sway/workspaces", "sway/window"],
   },
 
   "group/right": {
@@ -21,6 +21,11 @@
     "disable-scroll": true,
     "all-outputs": false,
     "format": "{name}",
+  },
+
+  "sway/window": {
+    "format": "{}",
+    "max-length": 150,
   },
 
   "network": {
