@@ -43,6 +43,7 @@ in {
     htop
     httpie
     jq
+    rclone
     ripgrep
     stern
     tfenv
@@ -84,6 +85,7 @@ in {
     perl5Packages.Carton
     python3
     uv
+    rustup
 
     # Kubernetes
     kubectl
