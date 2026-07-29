@@ -49,7 +49,6 @@ in {
     tfenv
     tomlq
     tree
-    wrangler
     yq
 
     # Terminal
