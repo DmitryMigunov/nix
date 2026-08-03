@@ -50,6 +50,7 @@ in {
     tomlq
     tree
     yq
+    wrangler
 
     # Terminal
     alacritty
