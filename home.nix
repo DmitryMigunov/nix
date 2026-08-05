@@ -51,6 +51,7 @@ in {
     tree
     yq
     wrangler
+    dive
 
     # Terminal
     alacritty
