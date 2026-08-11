@@ -36,6 +36,7 @@ in {
     bat
     bc
     croc
+    dive
     eza
     fd
     gcc
@@ -43,15 +44,15 @@ in {
     htop
     httpie
     jq
+    pnpm
     rclone
     ripgrep
     stern
     tfenv
     tomlq
     tree
-    yq
     wrangler
-    dive
+    yq
 
     # Terminal
     alacritty
