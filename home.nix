@@ -44,6 +44,7 @@ in {
     htop
     httpie
     jq
+    libxml2
     pnpm
     rclone
     ripgrep
@@ -87,7 +88,9 @@ in {
     perl5Packages.Carton
     python3
     uv
-    rustup
+    rustc
+    cargo
+    rust-analyzer
 
     # Kubernetes
     kubectl
