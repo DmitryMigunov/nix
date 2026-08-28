@@ -54,6 +54,8 @@ in {
     tree
     wrangler
     yq
+    talosctl
+    sonobuoy
 
     # Terminal
     alacritty
