@@ -24,7 +24,7 @@
 
     initContent = ''
       PROMPT='$(kube_ps1) '$PROMPT
-      PATH="$PATH:$HOME/go/bin:$HOME/bin"
+      PATH="$PATH:$HOME/go/bin:$HOME/bin:''${KREW_ROOT:-$HOME/.krew}/bin"
 
       tfa-targets() {
         local filter="$1"

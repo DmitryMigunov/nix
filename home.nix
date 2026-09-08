@@ -98,6 +98,7 @@ in {
     kubectl
     kubectl-view-secret
     kubectx
+    krew
     kubernetes-helm
 
     # Cloud
