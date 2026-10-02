@@ -32,6 +32,7 @@ in {
   programs.firefox.enable = true;
 
   home.packages = with pkgs; [
+    sox
     # CLI utilities
     bat
     bc
@@ -83,6 +84,9 @@ in {
     bun
     gnumake
     go
+    zlib
+    stdenv.cc.cc.lib
+    libpulseaudio
     (lua.withPackages (ps: [ps.cjson]))
     nixfmt
     nodejs
@@ -117,6 +121,13 @@ in {
 
   home.sessionVariables = {
     TFENV_CONFIG_DIR = "$HOME/.tfenv";
+    SDL_AUDIODRIVER = "pulseaudio";
+    LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath (with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      glib
+      libpulseaudio
+    ])}";
   };
 
   home.file.".config" = {
