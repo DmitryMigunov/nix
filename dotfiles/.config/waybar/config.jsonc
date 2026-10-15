@@ -10,7 +10,7 @@
 
   "group/right": {
     "orientation": "horizontal",
-    "modules": ["custom/kube", "network", "clock", "tray"],
+    "modules": ["custom/kube", "network", "pulseaudio", "clock", "tray"],
   },
 
   "modules-left": ["group/left"],
@@ -50,5 +50,23 @@
     "exec": "lua ~/.config/waybar/kube-context.lua",
     "return-type": "json",
     "interval": 3,
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
+    "format-icons": {
+      "headphone": "󰋎",
+      "hands-free": "󰂑",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "scroll-step": 2,
+    "on-click": "pavucontrol",
+    "tooltip-format": "{desc} | {volume}%"
   },
 }

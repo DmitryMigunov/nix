@@ -32,6 +32,9 @@ in {
   programs.firefox.enable = true;
 
   home.packages = with pkgs; [
+    pavucontrol
+    pamixer
+
     sox
     # CLI utilities
     bat
