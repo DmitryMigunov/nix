@@ -52,14 +52,15 @@ in {
     pnpm
     rclone
     ripgrep
+    sonobuoy
     stern
+    talosctl
+    tcpdump
     tfenv
     tomlq
     tree
     wrangler
     yq
-    talosctl
-    sonobuoy
 
     # Terminal
     alacritty
