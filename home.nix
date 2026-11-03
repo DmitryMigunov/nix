@@ -19,6 +19,7 @@ in {
       ./programs/fzf.nix
 
       ./services/mako.nix
+      ./services/ollama.nix
     ]
     ++ lib.optionals (hostName == "dm") [
       ./services/kanshi.nix
@@ -143,6 +144,10 @@ in {
     source = ./dotfiles/bin;
     recursive = true;
   };
+
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.opencode/bin"
+  ];
 
   programs.waybar.enable = true;
 
