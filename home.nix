@@ -61,6 +61,7 @@ in {
     tomlq
     tree
     wrangler
+    miller
     yq
 
     # Terminal
