@@ -36,6 +36,10 @@ in {
     pavucontrol
     pamixer
 
+    # Audio and video
+    mpv
+    strawberry
+
     sox
     # CLI utilities
     bat
